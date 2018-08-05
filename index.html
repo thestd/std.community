@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>std:: - Студентська ІТ-Спільнота</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style media="screen">
+      body {
+        background: #3b3d4d;
+        font-family: Roboto, sans-serif;
+        animation: colorchange_bg 10s infinite linear;
+      }
+      .box, .dot {
+        display: inline-block;
+      }
+      .box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200px;
+        height: 200px;
+        margin: -100px;
+        animation: spin 5s infinite linear;
+      }
+      .box:hover {
+        animation-duration: 0.6s;
+      }
+      .box:active {
+        animation-duration: 0.2s;
+      }
+      .dot {
+        width: 40%;
+        height: 40%;
+        background: #f2efef;
+        margin: 5%;
+        border-radius: 50%;
+        animation: colorchange_dot 10s infinite linear;
+      }
+      .dot.cyan {
+        animation: colorchange_cyan 10s infinite linear;
+      }
+      .box:active .dot {
+        animation: gocrazy 5s infinite linear, colorchange_dot 5s infinite linear;
+      }
+      .box:active .dot.cyan {
+        animation: gocrazy 5s infinite linear, colorchange_cyan 5s infinite linear;
+      }
+      a {
+        position: absolute;
+        opacity: 0;
+        display: block;
+        padding: 20px;
+        width: 20px;
+        height: 20px;
+        border: 20px solid white;
+        background: transparent;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+      }
+      a:hover { opacity: 0.9; }
+      a.top { top:0; border-bottom: none; }
+      a.right { right:0; border-left: none; }
+      a.bottom { bottom:0; border-top: none; }
+      a.left { left:0; border-right: none; }
+      body:active { animation: colorchange_bg 5s infinite linear; }
+      body:active a { opacity: 0.3; }
+      .cyan { background: #21859e; }
+      .text-cyan { color: #21859e; border-color: #21859e; }
+      .text-facebook { color: #395898; border-color: #395898; }
+      .text-telegram { color: #20a0e1; border-color: #20a0e1; }
+      .text-github { color: #ff4929; border-color: #ff4929; }
+      .text-linkedin { color: #0077b5; border-color: #0077b5; }
+      @keyframes spin {
+        from {transform:rotate(0deg);}
+        to {transform:rotate(360deg);}
+      }
+      /*
+      community: #3B3D4D, #F2EFEF, #21859E
+      hackathon: #393E41, #BABCBE, #D76443
+      media: #050D16, #F6FDFA, #EE0BCB
+      conference: #11181C, #F2EFEF, #28A745
+      play: #171717, #F2EFEF, #FF0000
+      beer: #11181C, #F2EFEF, #FFC107
+       */
+      @keyframes colorchange_bg {
+        0% {background: #3B3D4D;}
+
+        5% {background: #393E41;}
+        15% {background: #393E41;}
+
+        20% {background: #050D16;}
+        30% {background: #050D16;}
+
+        35% {background: #11181C;}
+        45% {background: #11181C;}
+
+        50% {background: #171717;}
+        60% {background: #171717;}
+
+        65% {background: #11181C;}
+        75% {background: #11181C;}
+
+        80% {background: #F2EFEF;}
+        90% {background: #F2EFEF;}
+
+        95% {background: #3B3D4D;}
+      }
+      @keyframes colorchange_dot {
+        0% {background: #F2EFEF;}
+
+        5% {background: #BABCBE;}
+        15% {background: #BABCBE;}
+
+        20% {background: #F6FDFA;}
+        30% {background: #F6FDFA;}
+
+        35% {background: #F2EFEF;}
+        45% {background: #F2EFEF;}
+
+        50% {background: #F2EFEF;}
+        60% {background: #F2EFEF;}
+
+        65% {background: #F2EFEF;}
+        75% {background: #F2EFEF;}
+
+        80% {background: #21859E;}
+        90% {background: #21859E;}
+
+        95% {background: #F2EFEF;}
+      }
+      @keyframes colorchange_cyan {
+        0% {background: #21859E;}
+
+        5% {background: #D76443;}
+        15% {background: #D76443;}
+
+        20% {background: #EE0BCB;}
+        30% {background: #EE0BCB;}
+
+        35% {background: #28A745;}
+        45% {background: #28A745;}
+
+        50% {background: #FF0000;}
+        60% {background: #FF0000;}
+
+        65% {background: #FFC107;}
+        75% {background: #FFC107;}
+
+        80% {background: #3B3D4D;}
+        90% {background: #3B3D4D;}
+
+        95% {background: #21859E;}
+      }
+      @keyframes gocrazy {
+        0%: {opacity: 1; border-radius: 50%; margin: 5%; width: 40%; height: 40%;}
+        25% {opacity: 0.1; border-radius: 5%; margin: 1%; width: 48%; height: 48%;}
+        50% {opacity: 1; border-radius: 50%; margin: 20%; width: 10%; height: 10%;}
+        25% {opacity: 0.1; border-radius: 5%; margin: 1%; width: 48%; height: 48%;}
+        100%: {opacity: 1; border-radius: 50%; margin: 5%; width: 40%; height: 40%;}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <canvas class="dot"></canvas><canvas class="dot cyan"></canvas>
+      <canvas class="dot"></canvas><canvas class="dot cyan"></canvas>
+    </div>
+
+    <div id="links">
+      <a class="top left text-linkedin" href="https://www.linkedin.com/company/thestd/" target="_blank" title="Компанія std:: на LinkedIn">LI</a>
+      <a class="top right text-telegram" href="https://t.me/thestd" target="_blank" title="Канал std:: у Telegram">TG</a>
+      <a class="bottom right text-facebook" href="https://fb.com/stdteam" target="_blank" title="Сторінка std:: на Facebook">FB</a>
+      <a class="bottom left text-github" href="https://github.com/thestd" target="_blank" title="Репозиторії std:: на GitHub">GH</a>
+    </div>
+  </body>
+</html>
