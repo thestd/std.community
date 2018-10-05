@@ -204,6 +204,10 @@ img::-moz-selection {
   }
 }
 
+header {
+  height: 100%;
+}
+
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
@@ -211,6 +215,7 @@ header.masthead {
   background-color: #11181c;
   background-position: center center;
   background-size: cover;
+
 }
 
 header.masthead hr {
